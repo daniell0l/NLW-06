@@ -1,6 +1,9 @@
+
+import "reflect-metadata";
 import express, { request, response } from "express";
 
-// @types/express
+import "./database";
+
 const app = express();
 
 /**
@@ -9,6 +12,17 @@ const app = express();
  * PUT  => Alterar uma informação
  * DELETE => Remover um dado
  * PATCH => Alterar uma informação especifica
+ */
+
+/**
+ * tipos de parametros
+ * Routes params => http://localhost:3000/produtos/78347583458345
+ * Query Params => http;//localhost:3000/produtos?name=teclado&description=tecladobom&
+ * 
+ * Body Params => {
+ *  "name": "teclado",
+ * "description": "teclado bom"
+ * }
  */
 app.get("/test", (request, response) => {
 // Request => e tudo que esta Entrando
